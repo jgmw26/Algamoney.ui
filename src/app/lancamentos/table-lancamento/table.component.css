@@ -1,0 +1,20 @@
+#alinha{
+    width: 120px;
+    text-align: right;
+}
+
+#central{
+    width: 120px;
+    text-align: center;
+}
+
+label{
+    font-weight: bold;
+}
+
+@media (min-width: 1200px){
+    .container{
+        width: 1170px;
+        margin: 0 auto;
+    }
+}

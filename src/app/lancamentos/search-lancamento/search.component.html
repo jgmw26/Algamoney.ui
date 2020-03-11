@@ -1,0 +1,47 @@
+<app-navbar></app-navbar>
+
+<div class="container ui-g">
+  <form autocomplete="off" (ngSubmit)="pesquisar()">
+    <div class="ui-g-12">
+      <h1>Lançamentos</h1>
+    </div>
+
+    <div class="ui-g-12 ui-fluid">
+      <label>Descrição</label>
+      <input
+        pinputtext
+        type="text"
+        class="ui-inputtext ui-corner-all ui-state-default ui-widget"
+        name="descricao"
+        [(ngModel)]="descricao"
+        appCampoColorido
+      />
+    </div>
+
+    <div class="ui-g-12">
+      <label style="display: block;">Vencimento</label>
+      <input
+        pinputtext
+        type="text"
+        style="width: 95px;"
+        class="ui-inputtext ui-corner-all ui-state-default ui-widget"
+      />
+
+      <label>até</label>
+      <input
+        pinputtext
+        type="text"
+        style="width: 95px;"
+        class="ui-inputtext ui-corner-all ui-state-default ui-widget"
+      />
+    </div>
+
+    <div class="ui-g-12">
+      <button pButton type="submit" label="Pesquisar"></button>
+    </div>
+  </form>
+
+  <div class="ui-g-12">
+    <app-table [lancamentos]="lancamentos"></app-table>
+  </div>
+</div>

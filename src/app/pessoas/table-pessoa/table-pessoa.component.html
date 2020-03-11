@@ -1,0 +1,48 @@
+<div class="ui-g-12">
+
+  <p-table [responsive]="true" [value]="pessoas" [paginator]="true" [rows]="row">
+
+    <ng-template pTemplate="header">
+      <tr id="central">
+
+
+        <th colspan="2">Nome</th>
+        <th colspan="2">Logradouro</th>
+        <th colspan="1">Numero</th>
+        <th colspan="1">Complemento</th>
+        <th colspan="1">Bairro</th>
+        <th colspan="1">Cep</th>
+        <th colspan="1">Cidade</th>
+        <th colspan="1">Estado</th>
+        <th colspan="1">
+          <div>
+            <button (click)="menosRow()" style="border:none; margin: 2px;" pTooltip="Diminuir Numero de Linhas" tooltipPosition="top"><i class="pi pi-angle-left" ></i></button>
+            {{row}}
+            <button (click)="maisRow()" style="border:none; margin: 2px;" pTooltip="Aumetar Numero de Linhas" tooltipPosition="top"><i class="pi pi-angle-right"></i></button>
+          </div>
+        </th>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-pessoas>
+
+      <tr>
+        <td colspan="2">{{pessoas.nome}}</td>
+        <td colspan="2">{{pessoas.logradouro}}</td>
+        <td id="alinha" colspan="1">{{pessoas.numero}}</td>
+        <td id="alinha" colspan="1">{{pessoas.complemento}}</td>
+        <td id="alinha" colspan="1">{{pessoas.bairro}}</td>
+        <td id="alinha" colspan="1">{{pessoas.cep}}</td>
+        <td id="alinha" colspan="1">{{pessoas.cidade}}</td>
+        <td id="alinha" colspan="1">{{pessoas.estado}}</td>
+        <td colspan="1" id="central" style="float:unset;">
+          <button pButton icon="pi pi-pencil" style="margin: 2px;" pTooltip="Editar" tooltipPosition="top"></button>
+          <button pButton icon="pi pi-trash" style="margin: 2px; " pTooltip="Excluir" tooltipPosition="top"></button>
+        </td>
+      </tr>
+    </ng-template>
+  </p-table>
+
+</div>
+<div class="ui-g-12">
+  <a pButton href="../pessoa-cadastro/pessoa-cadastro.component.html" label="Nova Pessoa"></a>
+</div>
