@@ -1,5 +1,6 @@
 import { LancamentosService } from "./../lancamentos.service";
 import { Component, Input, OnInit } from "@angular/core";
+import { SearchLancamentoComponent } from "../search-lancamento/search.component";
 
 @Component({
   selector: "app-table",
@@ -26,6 +27,13 @@ export class TableLancamentoComponent implements OnInit {
     } else {
       this.row--;
     }
+  }
+
+  deletar(id: Number) {
+    this.lancamentoService.deletar(id).subscribe(
+      // success => this.onRefresh(),
+      error => alert("Erro ao remover o produto")
+    );
   }
 
   ngOnInit() {}
