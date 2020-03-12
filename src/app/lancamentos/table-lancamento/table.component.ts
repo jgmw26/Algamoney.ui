@@ -29,11 +29,10 @@ export class TableLancamentoComponent implements OnInit {
     }
   }
 
-  deletar(id: Number) {
-    this.lancamentoService.deletar(id).subscribe(
-      // success => this.onRefresh(),
-      error => alert("Erro ao remover o produto")
-    );
+  deletar(lancamento: any) {
+    this.lancamentoService.deletar(lancamento.id).then(() => {
+      console.log("Excluir");
+    });
   }
 
   ngOnInit() {}
