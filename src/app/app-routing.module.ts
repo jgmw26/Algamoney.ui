@@ -1,3 +1,4 @@
+import { AuthUserComponent } from './auth/auth-user/auth-user.component';
 import { SearchLancamentoComponent } from "./lancamentos/search-lancamento/search.component";
 import { LancamentoCadastroComponent } from "./lancamentos/cadastro-lancamento/lancamento-cadastro.component";
 import { NgModule } from "@angular/core";
@@ -10,10 +11,12 @@ const routes: Routes = [
     data: { title: "Cadastro de Lancamentos" }
   },
   { path: "search", component: SearchLancamentoComponent },
+  { path: "login", component: AuthUserComponent },
   {
     path: "",
-    redirectTo: "/search",
-    pathMatch: "full"
+    redirectTo: "/login",
+    pathMatch: "full",
+    canDeactivate:["search","cadastro"]
   }
 ];
 

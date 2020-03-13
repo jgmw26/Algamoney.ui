@@ -10,7 +10,7 @@ import { analyzeAndValidateNgModules } from "@angular/compiler";
   styleUrls: ["./lancamento-cadastro.component.css"]
 })
 export class LancamentoCadastroComponent implements OnInit {
-  lancamento: any;
+  lancamento: Function;
   categorias: any;
   pessoas: any;
 
@@ -24,20 +24,20 @@ export class LancamentoCadastroComponent implements OnInit {
   }
 
   constructor(private lancamentoService: LancamentosService) {
-    this.lancamento({
-      dataVencimento: Date,
-      dataInicio: Date,
-      descricao: String,
-      observacao: String,
-      tipo: String,
-      valor: Number,
-      categoria: {
-        id: Number
-      },
-      pessoa: {
-        id: Number
-      }
-    });
+    // this.lancamento({
+    //   dataVencimento: Date,
+    //   dataInicio: Date,
+    //   descricao: String,
+    //   observacao: String,
+    //   tipo: String,
+    //   valor: Number,
+    //   categoria: {
+    //     id: Number
+    //   },
+    //   pessoa: {
+    //     id: Number
+    //   }
+    // });
   }
 
   adicionar() {

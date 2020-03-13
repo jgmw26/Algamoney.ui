@@ -1,0 +1,27 @@
+<div class="ui-g container">
+  <form [formGroup]="loginForm" #form="ngForm" (ngSubmit)="login()">
+    <div class="ui-g-12 form-group">
+      <label>UserName</label>
+      <input
+        #userNameInput
+        class="form-control"
+        placeholder="user name"
+        formControlName="email"
+        required
+        minlength="5"
+      />
+    </div>
+    <div class="ui-g-12 form-group">
+      <label>Password</label>
+      <input
+        #PasswordInput
+        class="form-control"
+        placeholder="password"
+        formControlName="senha"
+        required
+        minlength="5"
+      />
+    </div>
+    <button type="submit" class="btn btn-primary">Login</button>
+  </form>
+</div>

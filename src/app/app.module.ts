@@ -13,6 +13,7 @@ import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
 import { CampoColoridoDirective } from "./campo-colorido.directive";
 import { CoreModule } from "./core/core.module";
+import { AuthModule } from "./auth/auth.module";
 
 @NgModule({
   declarations: [AppComponent, CampoColoridoDirective],
@@ -25,7 +26,8 @@ import { CoreModule } from "./core/core.module";
     PessoasModule,
     LancamnetosModule,
     CoreModule,
-    HttpClientModule
+    HttpClientModule,
+    AuthModule
   ],
   providers: [LancamentosService],
   bootstrap: [AppComponent],

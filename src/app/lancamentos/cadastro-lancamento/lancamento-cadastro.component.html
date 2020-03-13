@@ -7,7 +7,7 @@
 
       <div class="ui-g-12">
         <p-selectButton
-          [options]="lancamento.tipo"
+          [options]=""
           name="tipo"
           ngModel
           #tipo="ngModel"
@@ -30,7 +30,7 @@
         ></p-calendar>
         <app-message
           text="Informe uma Data de Vencimento"
-          [control]="vencimento"
+          [control]=""
           error="required"
         ></app-message>
       </div>
@@ -49,7 +49,7 @@
           text="Informe uma Data de {{
             tipo.value === 'RECEITA' ? 'Recebimento' : 'Pagamento'
           }}"
-          [control]="pagamento"
+          [control]=""
           error="required"
         ></app-message>
       </div>
@@ -68,7 +68,7 @@
 
         <app-message
           text="Informe uma Descrição"
-          [control]="descricao"
+          [control]=""
           error="required"
         ></app-message>
 
@@ -76,7 +76,7 @@
           text="Mínimo de {{
             descricao.errors?.minlength?.requiredLength
           }} caracteres."
-          [control]="descricao"
+          [control]=""
           error="minlength"
         ></app-message>
       </div>
@@ -96,7 +96,7 @@
         />
         <app-message
           text="Informe uma Valor"
-          [control]="valor"
+          [control]=""
           error="required"
         ></app-message>
       </div>
@@ -104,7 +104,7 @@
       <div class="ui-g-12 ui-md-6 ui-fluid">
         <label>Categoria</label>
         <p-dropdown
-          [options]="categorias"
+          [options]=""
           name="categoria"
           ngModel
           #categoria="ngModel"
@@ -113,7 +113,7 @@
         ></p-dropdown>
         <app-message
           text="Informe uma Categoria"
-          [control]="categoria"
+          [control]=""
           error="required"
         ></app-message>
       </div>
@@ -121,7 +121,7 @@
       <div class="ui-g-12 ui-md-6 ui-fluid">
         <label>Pessoa</label>
         <p-dropdown
-          [options]="pessoas"
+          [options]=""
           name="pessoa"
           ngModel
           #pessoa="ngModel"
@@ -131,7 +131,7 @@
         ></p-dropdown>
         <app-message
           text="Informe uma Pessoa"
-          [control]="pessoa"
+          [control]=""
           error="required"
         ></app-message>
       </div>

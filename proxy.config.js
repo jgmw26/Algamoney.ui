@@ -1,7 +1,8 @@
-const proxy = [{
-    context: '/api',
-    target: 'http://localhost:8081',
-    pathRewrite: {'^/api' : ''}
+const proxy = [
+  {
+    context: "/",
+    target: "http://localhost:8081",
+    pathRewrite: { "^/": "" }
   }
 ];
 

@@ -1,6 +1,7 @@
 import { LancamentosService } from "./../lancamentos.service";
 import { Component, Input, OnInit } from "@angular/core";
 import { SearchLancamentoComponent } from "../search-lancamento/search.component";
+import { error } from "@angular/compiler/src/util";
 
 @Component({
   selector: "app-table",
@@ -29,10 +30,17 @@ export class TableLancamentoComponent implements OnInit {
     }
   }
 
-  deletar(lancamento: any) {
-    this.lancamentoService.deletar(lancamento.id).then(() => {
-      console.log("Excluir");
-    });
+  consultar() {
+    this.lancamentoService
+      .consultar()
+      .then(lancamentos => (this.lancamentos = lancamentos.content));
+  }
+
+  deletar(id: number) {
+    this.lancamentoService.deletar(id).subscribe(
+      succes => this.consultar(),
+      error => alert("Erro ao Remover o Lançamento")
+    );
   }
 
   ngOnInit() {}
